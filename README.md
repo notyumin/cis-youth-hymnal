@@ -1,39 +1,62 @@
-### Want full control over everything in this template?
-We've created a new project called [**stackmix**](https://github.com/roxiness/stackmix). It's an experimental CLI that let's you pick and mix all features in a Routify template! Get started with `npx stackmix`
+# CIS Youth Hymnal
 
+Built with: 
+- Svelte
+- Routify (for routing)
+- mvdex (for Markdown parsing)
 
-# Routify Starter
+## Contributing
+You can contribute new hymn lyrics by following the following guidelines:
 
-Starter template for [Routify](https://github.com/roxiness/routify).
+1. Start each block with a **bolded** label. e.g. `**Verse 1**` (will show as **Verse 1**)
 
-# Get started
+2. At the end of each line, add two spaces. This helps markdown know to start a new line. 
 
-To get started run:
-```sh
-mkdir routify-app
-cd routify-app
-npx @roxi/routify init
+3. At the top of the file, include block of text (known as "frontmatter) enclosed within 3 dashes `---`. It looks like this:
 ```
+---
+title: You Are My Strength
+medleyFrom: 0
+medleyTo: 0
+---
+```
+> Note: If there's no medleys, put the number as 0. Otherwise, put the numbers of the respective medleys separated by commas. e.g. `medleyFrom: 11, 78`
 
+Full Example:
+```
+---
+title: You Are My Strength
+medleyFrom: 0
+medleyTo: 0
+---
 
-# Scripts
+**Verse 1**  <- 2 spaces!
+You are my strength when I am weak  <- 2 spaces!
+You are the treasure that I seek  <- 2 spaces!
+You are my All in All.
 
-Run with `npm run <command>`, for example `npm run dev`
+**Verse 2**  <- 2 spaces!
+Seeking You as a precious jewel,  <- 2 spaces!!!
+Lord to give up I'd be a fool,  <- 2. Spaces.
+You are my All in All.
 
-| Command   | Description                                   |
-|-----------|-----------------------------------------------|
-| `dev`     | Development (port 5000)                       |
-| `build`   | Build your app for production!                |
-| `preview` | Preview the built version of your app locally |
+**Chorus**  <- 2 spaces!
+Jesus, Lamb of God, worthy is Your Name!  <- 2.
+Jesus, Lamb of God, worthy is Your Name!  
+```
+---
+The above code will show up in the app as:
 
-# Want a service worker?
-Checkout [vite-plugin-pwa](http://npmjs.org/vite-plugin-pwa)
+**Verse 1**  
+You are my strength when I am weak   
+You are the treasure that I seek  
+You are my All in All.
 
-# Extra Configs
-We include a few extra configs to help make it easy to ship a Routify project:
+**Verse 2**  
+Seeking You as a precious jewel,  
+Lord to give up I'd be a fool,  
+You are my All in All.
 
-| Config Path        | Description                                                                                                                                                |
-|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `netlify.toml`     | This is the [Netlify](https://www.netlify.com/) config, you need this when publishing to Netlify                                                           |
-| `vercel.json`      | This is the [Vercel](https://vercel.com/) config, you need this when publishing to Vercel                                                                  |
-| `public/.htaccess` | If you build your site to static using [spank](https://www.npmjs.com/package/spank) you will need this when putting your site on an apache based webserver |
+**Chorus**  
+Jesus, Lamb of God, worthy is Your Name!  
+Jesus, Lamb of God, worthy is Your Name!
