@@ -1,16 +1,27 @@
 <script>
-  import { params } from "@roxi/routify";
+  import { page, layout } from "@roxi/routify";
 
-  let hymnNo = $params.hymnNo;
+  const hymnNo = $page.title;
+
+  //https://mdsvex.pngwn.io/docs#frontmatter-1
+  //Workaround using import because metadata isn't showing up
+  //in $layout.children for some reason
+  let hymnTitle;
+  (async () => {
+    const { metadata } = await import(/* @vite-ignore */ `./${hymnNo}.svx`);
+    hymnTitle = metadata.title;
+  })();
 </script>
 
 <div class="header">
   <p>
     <!-- TODO For responsiveness, don't show Title below certain width -->
-    Hymn <span class="highlight-text">{hymnNo}</span>: You Are My Strength
+    Hymn <span class="hl-text">{hymnNo}</span>: {hymnTitle}
   </p>
 </div>
-<slot class="body" />
+<div class="lyrics">
+  <slot />
+</div>
 
 <style>
   .header {
@@ -22,14 +33,16 @@
     font-size: 25px;
     color: white;
     font-weight: 700;
+    padding: 8px;
   }
 
-  .highlight-text {
+  .hl-text {
     color: #ffec96;
   }
 
-  .body {
-    margin-top: 30px;
-    padding: 30px;
+  .lyrics {
+    margin-left: 16px;
+    padding: 8px;
+    background-color: white;
   }
 </style>

@@ -3,7 +3,7 @@
 Built with: 
 - Svelte
 - Routify (for routing)
-- mvdex (for Markdown parsing)
+- MDsveX (for Markdown parsing)
 
 ## Contributing
 You can contribute new hymn lyrics by following the following guidelines:
@@ -12,7 +12,7 @@ You can contribute new hymn lyrics by following the following guidelines:
 
 2. At the end of each line, add two spaces. This helps markdown know to start a new line. 
 
-3. At the top of the file, include block of text (known as "frontmatter) enclosed within 3 dashes `---`. It looks like this:
+3. At the top of the file, include block of text (known as "frontmatter") enclosed within 3 dashes `---`. It looks like this:
 ```
 ---
 title: You Are My Strength
